@@ -89,12 +89,12 @@ if [ -n "$STATE" ]; then
     '{
       schema: $schema, plan: $plan, created_at: $at,
       tier: $tier, phase: "RS", phases_done: ["RS"],
-      rightsize: {
+      rightsize: ({
         score: $score, computed_tier: $computed,
         inputs: {files_est: $files, new_dep: ($newdep==1), public_api: ($api==1),
                  migration: ($mig==1), security: ($sec==1), novel: ($novel==1), stakes: $stakes}
       }
-      + (if $reason != "" then {override: {tier: $tier, reason: $reason, at: $at}} else {} end),
+      + (if $reason != "" then {override: {tier: $tier, reason: $reason, at: $at}} else {} end)),
       refine_cycles: 0, skips: [], gates: [], amendments: [],
       declared_scope: [], criteria_sha256: null, critic: {author: null, checker: null}
     }' > "$STATE"
