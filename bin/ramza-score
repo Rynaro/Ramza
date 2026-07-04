@@ -93,7 +93,7 @@ case "$RUBRIC" in
     require_dims "clarity completeness actionability efficiency testability" 1 5
     MIN_REQ=4; [ "$CYCLE" -le 1 ] && MIN_REQ=3
     RESULT=$(printf '%s' "$DIMS" | jq --argjson minreq "$MIN_REQ" --argjson cycle "$CYCLE" '
-      (.clarity + .completeness + .actionability + .efficiency + .testability) / 5 as $mean
+      ((.clarity + .completeness + .actionability + .efficiency + .testability) / 5) as $mean
       | ([.clarity, .completeness, .actionability, .efficiency, .testability] | min) as $min
       | {rubric: "refine", cycle: $cycle, total: ($mean * 100 | round / 100), min: $min, dims: .}
       | .verdict = (if $min >= $minreq then "pass" else "fail" end)')

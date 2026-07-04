@@ -16,6 +16,10 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Install shellcheck (macOS — not preinstalled on the runner)
+        if: runner.os == 'macOS'
+        run: brew install shellcheck
+
       - name: shellcheck install.sh
         run: shellcheck -x -S error install.sh
 
