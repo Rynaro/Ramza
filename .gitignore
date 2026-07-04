@@ -1,0 +1,6 @@
+# Consumer/session artifacts — never commit from the dev repo
+.spectra/
+.claude/*
+!.claude/agents/
+*.tmp.*
+.DS_Store

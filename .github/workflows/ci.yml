@@ -1,0 +1,31 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  bats:
+    name: bats + shellcheck
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: shellcheck install.sh
+        run: shellcheck -x -S error install.sh
+
+      - name: shellcheck bin/*
+        run: shellcheck -x -S error bin/*
+
+      - name: Install bats-core (pinned v1.13.0)
+        run: |
+          git clone --depth 1 --branch v1.13.0 \
+            https://github.com/bats-core/bats-core.git /tmp/bats
+
+      - name: Run bats suite
+        run: /tmp/bats/bin/bats tests/
