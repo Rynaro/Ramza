@@ -33,7 +33,7 @@ The response opens with a `ramza-rightsize` call/result (tier + score), then a S
 - MUST contain phrase: `GIVEN`
 - MUST contain phrase: `WHEN`
 - MUST contain phrase: `THEN`
-- MUST contain phrase: `\`\`\`yaml`
+- MUST contain heading: ```yaml
 - SHOULD contain phrase: `READ-ONLY`
 - SHOULD contain phrase: `hypothes`
 - SHOULD contain phrase: `ramza-score`
@@ -62,7 +62,7 @@ A RAMZA artefact whose final Assemble section contains both a markdown body and 
 - MUST contain heading: `## Scope`
 - MUST contain phrase: `ramza-rightsize`
 - MUST contain phrase: `P0|P1|P2`
-- MUST contain phrase: `\`\`\`yaml`
+- MUST contain heading: ```yaml
 - MUST contain phrase: `risk`
 - MUST mention paths: `Gemfile`
 - SHOULD contain phrase: `Devise`
@@ -98,7 +98,7 @@ The response begins with a `ramza-rightsize` call, then a `mcp__crystalium__reca
 - MUST contain phrase: `mcp__crystalium__session_end` OR `CRYSTALIUM absent`
 - MUST contain phrase: `author_agent` OR `CRYSTALIUM absent`
 - MUST contain phrase: `ramza` (in provenance context)
-- MUST contain phrase: `\`\`\`yaml`
+- MUST contain heading: ```yaml
 - MUST contain phrase: `GIVEN`
 - SHOULD contain phrase: `T1`
 - SHOULD contain phrase: `graceful` OR `CRYSTALIUM absent`
@@ -184,7 +184,7 @@ iterations. The final output is a single dual-format spec that still passes thro
 - MUST contain phrase: `Rejected Alternatives` OR `rejected`
 - MUST contain phrase: `bias` OR `identity` OR `rotate`
 - MUST contain phrase: `ramza-score`
-- MUST contain phrase: `\`\`\`yaml`
+- MUST contain heading: ```yaml
 - SHOULD contain phrase: `TRANCE`
 - SHOULD contain phrase: `cap 3` OR `3 iterations` OR `confidence`
 - SHOULD contain phrase: `worktree` OR `read-only`
