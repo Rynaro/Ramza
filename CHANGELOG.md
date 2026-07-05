@@ -2,6 +2,34 @@
 
 All notable changes to RAMZA. Format: [Keep a Changelog](https://keepachangelog.com/), versioning: SemVer.
 
+## [0.2.0] — 2026-07-04
+
+Stage-2 measurement instruments + EIIS conformance completion.
+
+### Added
+- **`bin/ramza-adherence`** — plan-adherence report (Plan-Phase / Plan-Order /
+  Plan-Fidelity + geometric-mean composite) computed from the state-file audit trail
+  and the latest drift evidence; `--min` threshold gate; appended to
+  `adherence_reports[]`. Adherence is measured separately from plan quality.
+- **`bin/ramza-calibrate`** — cross-model rubric calibration against shipped anchor
+  plans (`anchors/`: one solid-band, one weak-band with reference dimensions);
+  per-dimension tolerance + verdict-band agreement computed through the production
+  `ramza-score` path. Lands the calibration verb parked since the nexus v2.0 Wave-3
+  plan. Anchors ship in the repo/cache, not the consumer install target.
+- Root `AGENTS.md` + `CLAUDE.md` (EIIS required-file set — the scaffold lacked them;
+  caught preparing the attested release, which validates conformance at tag time).
+- Installer: the two new tools join the closed `BIN_NAMES` assertion set;
+  `templates/plan.junction.json` (Junction §7.5 plan template) now installs to
+  `schemas/plan.junction.json` and is asserted post-install.
+
+### Fixed
+- `ramza-score` refine rubric: jq-1.7.1 `as`-binding precedence (`x/5 as $v` parsed
+  as `x/(5 as $v|…)`) — parenthesized; full suite verified under jq 1.7.1.
+- `ramza-rightsize`: jq-1.7.1 object-value sums need explicit parentheses.
+- `ramza-verify-emit`: required-field check used `ecl_version`; the ECL v2.0 schema
+  and template name it `envelope_version`.
+- CI: shellcheck brew-installed on macos-latest (no longer preinstalled).
+
 ## [0.1.0] — 2026-07-04
 
 Scaffold release — the SPECTRA → RAMZA succession (see DESIGN-RATIONALE.md D1–D8 and

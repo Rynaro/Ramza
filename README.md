@@ -25,7 +25,7 @@ The plan mode market is a blackbox that asks for trust. RAMZA is the opposite be
 ## What RAMZA is
 
 A planning methodology (cycle, rubrics, templates — inherited from SPECTRA 4.11) whose
-every gate is **mechanized** in `bin/` — eight bash-3.2 tools, no runtime beyond `jq` + git:
+every gate is **mechanized** in `bin/` — ten bash-3.2 tools, no runtime beyond `jq` + git:
 
 | Tool | Enforces |
 |---|---|
@@ -37,6 +37,8 @@ every gate is **mechanized** in `bin/` — eight bash-3.2 tools, no runtime beyo
 | `ramza-lint` | Plan structural completeness per tier |
 | `ramza-drift` | **Plan-vs-diff drift**: declared scope vs the files actually touched — the check no vendor and no MCP server ships |
 | `ramza-verify-emit` | Emission gate: frontmatter contract + ECL envelope integrity (recomputed sha256, closed performative set) |
+| `ramza-adherence` | Post-execution adherence report: Plan-Phase / Plan-Order / Plan-Fidelity, geometric-mean composite — "did we follow the plan" measured separately from plan quality |
+| `ramza-calibrate` | Cross-model rubric calibration against shipped anchor plans (`anchors/`) — do not trust verdicts from an uncalibrated scorer |
 
 Everything lands in `.spectra/` (SPECTRA-compatible layout): the plan, the state file
 (the audit trail), the calibration log, the drift reports.

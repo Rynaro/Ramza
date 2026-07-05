@@ -34,7 +34,7 @@
 
 set -euo pipefail
 
-readonly EIDOLON_VERSION="0.1.0"
+readonly EIDOLON_VERSION="0.2.0"
 
 # Handle --version and --help before the bash version check so they
 # work cross-platform even on bash 3.x.
@@ -116,6 +116,7 @@ readonly SRC_SPEC_PROFILE="${SCRIPT_DIR}/schemas/spec-profile.v1.json"
 readonly SRC_ECL_ENVELOPE="${SCRIPT_DIR}/schemas/ecl-envelope.v1.json"
 readonly SRC_ECL_ENVELOPE_V2="${SCRIPT_DIR}/schemas/ecl-envelope.v2.json"
 readonly SRC_SPEC_ENVELOPE_TMPL="${SCRIPT_DIR}/templates/spec.envelope.json"
+readonly SRC_PLAN_JUNCTION_TMPL="${SCRIPT_DIR}/templates/plan.junction.json"
 # RAMZA-specific (no SPECTRA equivalent): the plan-state audit-trail schema
 # consumed by bin/ramza-gate + bin/ramza-rightsize, and the EIIS manifest
 # schema itself — both vendored into the install target per the canonical
@@ -130,7 +131,8 @@ readonly SRC_INSTALL_MANIFEST_SCHEMA="${SCRIPT_DIR}/schemas/install.manifest.v1.
 # inventory. copy_bin_files() below still globs SRC_BIN_DIR so any additional
 # ramza-* tool dropped into bin/ is ALSO installed even if this list lags.
 BIN_NAMES=( "ramza-rightsize" "ramza-gate" "ramza-score" "ramza-ears-lint" \
-            "ramza-freeze" "ramza-lint" "ramza-drift" "ramza-verify-emit" )
+            "ramza-freeze" "ramza-lint" "ramza-drift" "ramza-verify-emit" \
+            "ramza-adherence" "ramza-calibrate" )
 
 # The closed set of skill slugs. critic.md is intentionally listed even
 # though it may not exist in this checkout yet (authored separately) — its
@@ -531,6 +533,8 @@ if [[ "$MANIFEST_ONLY" != "true" ]]; then
   # manifest schema documents the shape of install.manifest.json emitted below.
   copy_file "$SRC_PLAN_STATE_SCHEMA"       "${TARGET}/schemas/plan-state.v1.json"       "other"
   copy_file "$SRC_INSTALL_MANIFEST_SCHEMA" "${TARGET}/schemas/install.manifest.v1.json" "other"
+  # Junction §7.5 plan template (JSON → schemas/ per EIIS v1.4 §1.9.1, same as spec.envelope)
+  copy_file "$SRC_PLAN_JUNCTION_TMPL"      "${TARGET}/schemas/plan.junction.json"       "other"
 
   # ECL v2.0 emission files (opt-in — only present when ECL_VERSION exists).
   # ecl-envelope.v1.json is RETAINED alongside v2 (not replaced) — see the
@@ -851,6 +855,7 @@ CODEX
     assert_file "templates/acceptance-criteria.md"
     assert_file "schemas/plan-state.v1.json"
     assert_file "schemas/install.manifest.v1.json"
+    assert_file "schemas/plan.junction.json"
 
     # ECL-conditional files — required iff SRC_ECL_VERSION existed (same gate
     # as the copy step above).

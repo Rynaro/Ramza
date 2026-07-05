@@ -1,0 +1,17 @@
+{
+  "id": "weak-rewrite",
+  "rubric": "explore",
+  "plan": "anchors/weak-rewrite.md",
+  "reference": {
+    "alignment": 6,
+    "correctness": 5,
+    "maintainability": 4,
+    "performance": 6,
+    "simplicity": 3,
+    "risk": 3,
+    "innovation": 8
+  },
+  "tolerance": 1,
+  "max_disagreements": 1,
+  "notes": "Reference total 49.0 (weak). The anchor exists to verify a scorer still discriminates the weak band — grade-inflation shows up here first."
+}

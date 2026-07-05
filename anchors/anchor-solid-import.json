@@ -1,0 +1,17 @@
+{
+  "id": "solid-import",
+  "rubric": "explore",
+  "plan": "anchors/solid-import.md",
+  "reference": {
+    "alignment": 9,
+    "correctness": 8,
+    "maintainability": 7,
+    "performance": 7,
+    "simplicity": 8,
+    "risk": 7,
+    "innovation": 6
+  },
+  "tolerance": 1,
+  "max_disagreements": 1,
+  "notes": "Reference total 77.5 (solid). A calibrated scorer lands every dimension within ±1 and agrees on the 'solid' band."
+}
