@@ -97,7 +97,7 @@ The response begins with a `ramza-rightsize` call, then a `mcp__crystalium__reca
 - MUST contain phrase: `mcp__crystalium__ingest` OR `CRYSTALIUM absent`
 - MUST contain phrase: `mcp__crystalium__session_end` OR `CRYSTALIUM absent`
 - MUST contain phrase: `author_agent` OR `CRYSTALIUM absent`
-- MUST contain phrase: `ramza` (in provenance context)
+- MUST contain phrase: `author_agent.*ramza` OR `ramza-0.2`
 - MUST contain heading: ```yaml
 - MUST contain phrase: `GIVEN`
 - SHOULD contain phrase: `T1`
