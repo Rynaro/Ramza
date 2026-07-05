@@ -2,6 +2,11 @@
 
 All notable changes to RAMZA. Format: [Keep a Changelog](https://keepachangelog.com/), versioning: SemVer.
 
+## [Unreleased]
+
+### Changed
+- Anchor references revised to v2 (consensus of two independent clean scorers — sonnet-5, haiku-4.5, 2026-07-05); v1 designer-authored references retired as a maker≠checker violation in reference authoring. First live calibration run: both scorer models now report `calibrated`; band agreement was universal even against v1 (the rubric discriminates — the references, not the scorers, were off on the weak anchor by 20-27 points).
+
 ## [0.2.0] — 2026-07-04
 
 Stage-2 measurement instruments + EIIS conformance completion.

@@ -3,15 +3,15 @@
   "rubric": "explore",
   "plan": "anchors/weak-rewrite.md",
   "reference": {
-    "alignment": 6,
-    "correctness": 5,
-    "maintainability": 4,
-    "performance": 6,
-    "simplicity": 3,
-    "risk": 3,
+    "alignment": 2,
+    "correctness": 2,
+    "maintainability": 2,
+    "performance": 4,
+    "simplicity": 2,
+    "risk": 2,
     "innovation": 8
   },
   "tolerance": 1,
   "max_disagreements": 1,
-  "notes": "Reference total 49.0 (weak). The anchor exists to verify a scorer still discriminates the weak band — grade-inflation shows up here first."
+  "notes": "Reference total 26.0 (weak). v2 references: consensus (rounded mean) of two independent clean scorers (sonnet-5, haiku-4.5, 2026-07-05); v1 designer-authored references were 20-27 points too lenient on this anchor — exactly the grade-inflation-of-ones-own-strawman failure the anchor exists to catch."
 }

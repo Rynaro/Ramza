@@ -76,9 +76,10 @@ teardown() {
 # ── ramza-calibrate ──────────────────────────────────────────────────────────
 
 write_good_scores() {
+  # Within ±1 of the v2 consensus references (see anchors/*.json notes).
   cat > "$1" <<'EOF'
-{"solid-import":{"alignment":9,"correctness":7,"maintainability":7,"performance":7,"simplicity":8,"risk":7,"innovation":6},
- "weak-rewrite":{"alignment":6,"correctness":5,"maintainability":4,"performance":5,"simplicity":3,"risk":3,"innovation":8}}
+{"solid-import":{"alignment":9,"correctness":8,"maintainability":9,"performance":8,"simplicity":9,"risk":8,"innovation":3},
+ "weak-rewrite":{"alignment":3,"correctness":2,"maintainability":2,"performance":4,"simplicity":2,"risk":2,"innovation":7}}
 EOF
 }
 
