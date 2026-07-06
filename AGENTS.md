@@ -1,8 +1,8 @@
 ---
 name: ramza
-version: 0.2.0
+version: 1.0.0
 methodology: RAMZA
-methodology_version: 0.2.0
+methodology_version: 1.0.0
 comm.envelope_version: "2.0"
 role: planning-specialist — transforms ambiguous intent into decision-ready, tamper-evident specifications; gates enforced by code
 handoffs:

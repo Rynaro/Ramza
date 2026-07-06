@@ -4,8 +4,35 @@ All notable changes to RAMZA. Format: [Keep a Changelog](https://keepachangelog.
 
 ## [Unreleased]
 
+## [1.0.0] — 2026-07-05
+
+Graduation. Stage-2 measurement complete and green; RAMZA leaves `in_construction`
+and takes the default planner seat (SPECTRA retained as the conservative opt-in
+fallback). No new mechanism — this release attests the methodology that the
+measurement validated.
+
+### Validated
+- **AC-001 (calibration):** both scorer models (sonnet-5, haiku-4.5) report
+  `calibrated` against v2 consensus anchors — and the instrument first caught its
+  own designer-authored v1 references as the miscalibrated side (a maker≠checker
+  violation in reference authoring).
+- **AC-002 (conformance):** 7/7 canary missions pass, 0 MUST-level failures —
+  surfacing (and fixing) five latent instrument/DSL defects across the nexus
+  validator and mission authoring along the way.
+- **AC-003 (planner A/B):** pre-registered, budget-matched, holdout-gated
+  non-inferiority run vs spectra@4.11.0. 24/24 cells, both arms 6/6 tasks pass²,
+  0 MUST failures; ramza non-inferior (6 ≥ 6−1) with holdout consistent.
+  Descriptive: ramza at ~51% of spectra's verbosity with machine-verifiable gate
+  audit trails. One run's maker≠checker critic caught and closed a real
+  criteria-desync (an audit-enumeration gap) at cycle-2, independent cycle-3 PASS.
+
 ### Changed
-- Anchor references revised to v2 (consensus of two independent clean scorers — sonnet-5, haiku-4.5, 2026-07-05); v1 designer-authored references retired as a maker≠checker violation in reference authoring. First live calibration run: both scorer models now report `calibrated`; band agreement was universal even against v1 (the rubric discriminates — the references, not the scorers, were off on the weak anchor by 20-27 points).
+- Anchor references revised to v2 (consensus of two independent clean scorers —
+  sonnet-5, haiku-4.5, 2026-07-05); v1 designer-authored references retired as a
+  maker≠checker violation in reference authoring. First live calibration run: both
+  scorer models now report `calibrated`; band agreement was universal even against
+  v1 (the rubric discriminates — the references, not the scorers, were off on the
+  weak anchor by 20-27 points).
 
 ## [0.2.0] — 2026-07-04
 
