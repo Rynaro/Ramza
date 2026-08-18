@@ -17,7 +17,7 @@ cortex `methodology/cortex/esl-protocol.md`.
 ## Your hop
 
 1. **right_size** — run your own RS gate first (`ramza-rightsize`, see
-   `agent.md` / `docs/methodology/SPEC.md`) — this sets RAMZA's own planning
+   `PERSONA.md` / `SPEC.md`) — this sets RAMZA's own planning
    tier (trivial/lite/full: how much of your cycle runs). Separately, score
    complexity through the tool —
 
@@ -35,18 +35,18 @@ cortex `methodology/cortex/esl-protocol.md`.
    `mcp__tonberry__propose --change_id <id> --maker vivi --checker <kupo|vigil> --has_code <bool>`.
    This scaffolds `.spectra/changes/<id>/change.json`.
 3. **specify** — run your normal **RS → S → P → E → C → T → (R) → A** cycle
-   (every gate through `bin/ramza-*`, see `skills/methodology.md`) and emit the
+   (every gate through `bin/ramza-*`, see `skills/methodology/SKILL.md`) and emit the
    spec **into the change folder**:
    - **lite** → one-page `spec.md` (GIVEN / WHEN / THEN + acceptance_checks).
    - **full** → `spec.{md,yaml}` (the standard dual-format RAMZA spec), with a
-     recorded critic (`ramza-gate critic`, see `skills/critic.md`) before
+     recorded critic (`ramza-gate critic`, see `skills/critic/SKILL.md`) before
      Assemble.
 4. **compose_manifest** — call `mcp__tonberry__compose_manifest` to set `tier`
    and `acceptance_checks` (ids referencing your GIVEN / WHEN / THEN) in
    `change.json`.
 5. **emission gate** — before handing off, run `ramza-verify-emit --spec <spec>
    [--envelope <envelope>]`; nothing hands off unvalidated (see
-   `skills/methodology.md` "ECL emission").
+   `skills/methodology/SKILL.md` "ECL emission").
 6. **hand off** to the implementer (**Vivi** at `in_progress`) with your normal
    ECL `PROPOSE` envelope.
 

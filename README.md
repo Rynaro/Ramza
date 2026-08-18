@@ -56,7 +56,7 @@ Everything lands in `.spectra/` (SPECTRA-compatible layout): the plan, the state
 ## Install
 
 ```bash
-bash install.sh /path/to/your/project        # EIIS 1.4; or via the Eidolons nexus:
+bash install.sh /path/to/your/project        # EIIS 3.0; or via the Eidolons nexus:
 eidolons add ramza                           # (once rostered)
 ```
 
@@ -73,7 +73,7 @@ is explicitly refused — the evidence says it loses on coupled work.
 
 ## Docs
 
-- `docs/methodology/SPEC.md` — the cycle (RS → S→P→E→C→T→R→A)
+- `SPEC.md` — the cycle (RS → S→P→E→C→T→R→A)
 - `docs/methodology/tiers.md` — right-sizing tiers and what each mandates
 - `docs/methodology/scoring.md` — rubrics as calibratable instruments
 - `DESIGN-RATIONALE.md` — succession decisions D1–D8, evidence-mapped
@@ -81,3 +81,17 @@ is explicitly refused — the evidence says it loses on coupled work.
 ## License
 
 CC BY-SA 4.0. Fork it, adapt it, ship it — keep it open.
+
+<!-- eiis-v3-package:start -->
+## EIIS v3 package
+
+This repository has the same self-contained package shape as every roster Eidolon:
+
+- `PERSONA.md` — bounded identity, triggers, authority, refusals, and handoffs.
+- `SPEC.md` — the authoritative methodology.
+- `skills/<methodology>/SKILL.md` — unique skill discovery entrypoints.
+- `manifest.json` — immutable package metadata and resource inventory.
+- `install.sh` — package-only installer; the nexus owns vendor adapters.
+
+See [INSTALL.md](INSTALL.md) for nexus and standalone installation.
+<!-- eiis-v3-package:end -->
