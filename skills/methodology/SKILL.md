@@ -8,14 +8,14 @@ metadata:
 # RAMZA — Methodology Skill
 
 Use this skill when the user needs a specification before implementation. This is
-the routing card — see `docs/methodology/SPEC.md` for the full architecture,
+the routing card — see `SPEC.md` for the full architecture,
 `docs/methodology/tiers.md` for the tier table, `docs/methodology/scoring.md` for
 rubric definitions.
 
 ## Memory pre-flight (cross-reference)
 
-On activation, recall fires in `agent.md` before RS — prior specs, decisions, and
-patterns are folded into context before this skill runs. See `agent.md`
+On activation, recall fires in `PERSONA.md` before RS — prior specs, decisions, and
+patterns are folded into context before this skill runs. See `PERSONA.md`
 "Memory & persistence" for the CRYSTALIUM recall call signature.
 
 If `mcp__crystalium__*` tools are unavailable, skip silently — RAMZA is
@@ -123,7 +123,7 @@ Full tier only — independent critique (never self-approved), then:
 ramza-gate critic --state <state> --author <you> --checker <critic-id>
 ```
 
-See `skills/critic.md` for the full debiasing protocol. `ramza-gate advance
+See `skills/critic/SKILL.md` for the full debiasing protocol. `ramza-gate advance
 --state <state> --to A` DENIES entry to Assemble at tier=full without a recorded
 critic.
 
@@ -160,12 +160,12 @@ green.
 
 This file is the routing card. Escalate on demand:
 
-- `docs/methodology/SPEC.md` — full cognitive architecture
+- `SPEC.md` — full cognitive architecture
 - `docs/methodology/tiers.md` — tier table + executor-scaffold doctrine
 - `docs/methodology/scoring.md` — rubric definitions + calibration protocol
 - `templates/planning-artifact.md` — spec artifact template
 - `templates/acceptance-criteria.md` — EARS criteria template (`ramza-ears-lint`-parseable)
-- `skills/critic.md` — maker≠checker critique protocol
+- `skills/critic/SKILL.md` — maker≠checker critique protocol
 
 ## Hard constraints (P0)
 

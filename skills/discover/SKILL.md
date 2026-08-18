@@ -105,10 +105,10 @@ the number of unchecked boxes, and MUST match the coverage line's arithmetic
 4. DISCOVER hands its summary to CLARIFY; it does not itself produce a plan.
 5. Coverage is mechanically countable: ≥2 unresolved `[GAP]` axes ⇒ escalate,
    computed from the checklist, never eyeballed.
-6. Every output path lives under `.spectra/` (see `docs/methodology/SPEC.md`
+6. Every output path lives under `.spectra/` (see `SPEC.md`
    "Output discipline").
 
-See `docs/methodology/SPEC.md` "## Pre-phases" for the full methodology section.
+See `SPEC.md` "## Pre-phases" for the full methodology section.
 
 ---
 

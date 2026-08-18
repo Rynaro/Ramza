@@ -115,7 +115,7 @@ human — **do not loop past the cap**.
    emission.
 6. Non-convergence → `[GAP]` escalation, never an unbounded loop.
 
-See `docs/methodology/SPEC.md` "## Parallel spec mode (TRANCE-gated)" for the
+See `SPEC.md` "## Parallel spec mode (TRANCE-gated)" for the
 full methodology section and `DESIGN-RATIONALE.md` for the succession's
 research basis.
 

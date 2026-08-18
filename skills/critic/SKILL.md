@@ -147,7 +147,7 @@ refine rubric: <pass | fail> (total <X>, cycle <N>)
 6. READ-ONLY — the critic reviews and records; it never edits the plan itself.
    Fixes land only through the author's next Refine pass.
 
-See `docs/methodology/SPEC.md` "## T — Test" for how the critic gate fits the
+See `SPEC.md` "## T — Test" for how the critic gate fits the
 cycle, `docs/methodology/tiers.md` for how it fits the tier table, and
 `docs/methodology/scoring.md` "refine (critique rubric)" for the rubric's
 weights and thresholds.

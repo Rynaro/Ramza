@@ -55,7 +55,7 @@ contract; self-verification is an additional guard, never a replacement.
 **Contrast with RAMZA's own outbound emissions:** this skill governs artefacts
 *arriving at* RAMZA. Artefacts RAMZA itself *emits* are gated the other
 direction, locally, by `ramza-verify-emit` at Assemble (frontmatter contract +
-recomputed sha256 + closed performative set) — see `skills/methodology.md` "ECL
+recomputed sha256 + closed performative set) — see `skills/methodology/SKILL.md` "ECL
 emission". The two gates are symmetric in spirit (nothing unvalidated crosses
 the edge) but run on opposite sides of the hand-off and are never substitutes
 for one another.
